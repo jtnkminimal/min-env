@@ -16,7 +16,7 @@ From the host:
 
 ## What's here
 
-- `minimal.toml` — sandbox + task definitions. Add your project's `build`/`test`/`run` tasks here.
+- `.minimal/minimal.toml` — sandbox + task definitions. Add your project's `build`/`test`/`run` tasks here.
 - `zellij.kdl` — the dev layout: three panes (Claude / task banner / shell).
 - `zellij-config.kdl` — zellij settings (suppresses startup tips & release notes).
 - `scripts/setup-dev.sh` — launcher invoked by the `dev` task; resets and attaches the zellij session.
@@ -28,12 +28,12 @@ Launches a zellij layout (`zellij.kdl`) via `scripts/setup-dev.sh` with three pa
 
 - **left** — Claude Code (`claude --dangerously-skip-permissions`, only safe because the sandbox is ephemeral).
 - **top-right** — a banner pane (`scripts/dev-shell.sh`) listing the available `min run <task>` shortcuts.
-- **bottom-right** — a plain interactive bash shell.
+- **bottom-right** — a plain interactive fish shell.
 
 The session is named `dev` and is reset on each invocation.
 
 ## Customizing
 
-1. Add tasks to `minimal.toml` (e.g. a `build` task with your toolchain packages and an `exec` line).
+1. Add tasks to `.minimal/minimal.toml` (e.g. a `build` task with your toolchain packages and an `exec` line).
 2. List them in the banner in `scripts/dev-shell.sh` so they show up in the dev session.
 3. Adjust the `packages` array of `[tasks.dev]` to include whatever tooling you want available in the shell pane.
