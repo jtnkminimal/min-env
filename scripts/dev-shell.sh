@@ -16,7 +16,7 @@ if [ -t 1 ]; then
   YW=$'\e[38;5;220m'             # yellow    — selected row
 fi
 
-TASK_FILE=${TASK_FILE:-.minimal/minimal.toml}
+TASK_FILE=${TASK_FILE:-minimal.toml}
 selected=0
 status=""
 
